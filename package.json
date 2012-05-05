@@ -1,0 +1,19 @@
+{
+  "author": "Justin Li <jli@j-li.net>",
+  "name": "blog-base",
+  "description": "An extremely lightweight blogging backend for node.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/j1i/node-blog-base",
+  "repository": "git://github.com/j1i/node-blog-base",
+  "main": "lib/blog",
+  "dependencies": {
+    "marked": "*",
+    "yaml": "*",
+    "inotify": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
