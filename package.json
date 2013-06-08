@@ -3,17 +3,13 @@
   "name": "blog-base",
   "description": "An extremely lightweight blogging backend for node.",
   "version": "0.0.1",
-  "homepage": "https://github.com/j1i/node-blog-base",
-  "repository": "git://github.com/j1i/node-blog-base",
+  "homepage": "https://github.com/pushrax/node-blog-base",
+  "repository": "git://github.com/pushrax/node-blog-base",
   "main": "lib/blog",
   "dependencies": {
-    "marked": "*",
-    "yaml": "*",
-    "inotify": "*"
+    "yaml": "~0.2.3",
+    "marked": "~0.2.9",
+    "inotify": "~1.2.1"
   },
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
-  }
+  "devDependencies": {}
 }
