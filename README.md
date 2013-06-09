@@ -1,20 +1,30 @@
 node-blog-base
 ==============
 
-  A dead simple blogging backend that lets you add a Markdown formatted blog to
-any existing Node.js site.
+  A dead simple blogging backend that lets you drop in a Markdown formatted blog
+to any existing Node.js site. It handles parsing and processing posts, but makes
+you set up your own site (routes and templates).
 
-Post Format
------------
+  There are tons of sweet static content generators out there that are perfect
+for many sites built from the ground up as blogs, but they do so much for you
+that it's more difficult to integrate them with existing sites.
+
+
+Posts
+-----
+
+Posts are stored in a single folder, with the name format `YYYY-MM-DD-title.md`.
+The title in the file name is the one you'd use in a URL, and should be free of
+weird characters.
 
 Metadata is stored at the beginning of post files in YAML, delimited by `---`.
 The remainder of the post is standard Markdown.
 
-Example:
+Example: `2010-01-23-nodejs-is-web-scale.md`
 
 ```markdown
 ---
-title: Node.js is web scale
+title: Node.js is ★Web Scale★
 tags:
 - Javascript
 - Node.js
