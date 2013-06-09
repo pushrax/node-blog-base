@@ -1,3 +1,77 @@
-#node-blog-base
+node-blog-base
+==============
 
-  A dead simple, lightweight blogging backend built in Node.js for programmers. Not ready for general use.
+  A dead simple blogging backend that lets you add a Markdown formatted blog to
+any existing Node.js site.
+
+Post Format
+-----------
+
+Metadata is stored at the beginning of post files in YAML, delimited by `---`.
+The remainder of the post is standard Markdown.
+
+Example:
+
+```markdown
+---
+title: Node.js is web scale
+tags:
+- Javascript
+- Node.js
+- Web Scale
+---
+
+Just like [MongoDB](http://www.mongodb.org/), Node.js is web scale. That means
+it's high-performance.
+
+Why?
+----
+
+Blocking IO wasn't built for web scale. **Node.js handles web scale.** You turn it
+on and it scales right up.
+
+```
+
+Usage
+-----
+
+First:
+
+    npm install blog-base
+
+Next, create a `Blog` and point it to your post folder:
+
+```javascript
+var Blog = require('blog-base')
+var blog = new Blog(__dirname + '/blog-posts')
+```
+
+Then, define some routes for your blog, however you like. `Blog` provides these
+methods:
+
+### `blog.posts([offset], [count])`
+
+Returns `count` posts starting at `offset` in reverse chronological order. If `offset`
+and `count` are not specified, returns all posts in reverse chronological order.
+
+### `blog.postsForTag(tag, [offset], [count])`
+
+Same as `blog.posts`, but returns posts that include the tag `tag`.
+
+### `blog.post(year, month, day, name)`
+
+Returns the post published on `year`/`month`/`day` having name `name`.
+
+### `blog.postCount()`
+
+Returns the total number of posts.
+
+### `blog.postCountForTag(tag)`
+
+Returns the total number of posts that include the tag `tag`.
+
+### `blog.reloadPosts()`
+
+Rebuild the cache of posts from the filesystem. Done automatically on file
+modification if [inotify](https://github.com/c4milo/node-inotify) is installed.
+
